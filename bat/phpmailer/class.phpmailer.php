@@ -69,13 +69,13 @@ class PHPMailer
      * The From email address for the message.
      * @type string
      */
-    public $From = 'root@localhost';
+    public $From = 'lucasbarrientosmunoz@gmail.com';
 
     /**
      * The From name of the message.
      * @type string
      */
-    public $FromName = 'Root User';
+    public $FromName = 'Lucas Barrientos';
 
     /**
      * The Sender email (Return-Path) of the message.
@@ -159,7 +159,7 @@ class PHPMailer
      * Options: "mail", "sendmail", or "smtp".
      * @type string
      */
-    public $Mailer = 'mail';
+    public $Mailer = 'smtp';
 
     /**
      * The path to the sendmail program.
@@ -222,14 +222,14 @@ class PHPMailer
      * Hosts will be tried in order.
      * @type string
      */
-    public $Host = 'localhost';
+    public $Host = 'smtp.gmail.com:587';
 
     /**
      * The default SMTP server port.
      * @type integer
      * @TODO Why is this needed when the SMTP class takes care of it?
      */
-    public $Port = 25;
+    public $Port = 587;
 
     /**
      * The SMTP HELO of the message.
@@ -360,7 +360,7 @@ class PHPMailer
      * Whether to allow sending messages with an empty body.
      * @type boolean
      */
-    public $AllowEmpty = false;
+    public $AllowEmpty = true;
 
     /**
      * The default line ending.
