@@ -16,12 +16,12 @@
     padding: 1em 0.3em;
   }
   #search-container input:focus {
-    border-bottom-color: #6759ff;
+    border-bottom-color: rgb(35, 36, 38);
   }
   #search-container button {
     padding: 1em 2em;
     margin-left: 1em;
-    background-color: #6759ff;
+    background-color: rgb(35, 36, 38);
     color: #ffffff;
     border-radius: 5px;
     border: 0px;
@@ -30,18 +30,20 @@
   }
   #search-container button:hover {
     filter: opacity(85%);
-    background-color: #4d42cc;
+    background-color: rgb(52, 53, 56);
   }
   .button-value {
-    border: 2px solid #6759ff;
+    border: 2px solid rgb(35, 36, 38);
     padding: 1em 2.2em;
     border-radius: 3em;
     background-color: transparent;
-    color: #6759ff;
+    color: rgb(35, 36, 38);
     cursor: pointer;
+    margin-top: 0.5em;
+    font-size: 14px;
   }
   .button-value.activo {
-    background-color: #6759ff;
+    background-color: rgb(35, 36, 38);
     color: #ffffff;
   }
   #products {
@@ -90,4 +92,8 @@
       grid-template-columns: auto auto;
       grid-column-gap: 1em;
     }
+  }
+
+  .product-name {
+    font-size: 13px;
   }

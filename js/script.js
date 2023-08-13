@@ -1274,58 +1274,58 @@
 }());
 let products = {
     data: [
-      {
+{
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "sroom",
         price: "30",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+},
+{
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "sroom",
         price: "49",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+},
+{
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "mroom",
         price: "99",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+    },
+    {
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "lroom",
         price: "29",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+    },
+    {
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "xlroom",
         price: "129",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+    },
+    {
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "lroom",
         price: "89",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+    },
+    {
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "mroom",
         price: "600/mes",
         image: "/images/apartejemplo.jpg",
-      },
-      {
+    },
+    {
         productName: "Plaza de San Isidro 1, 18012, Granada, España",
         category: "xlroom",
         price: "300/mes",
         image: "/images/apartejemplo.jpg",  
-      },
+    },
     ],
-  };
-  
-  for (let i of products.data) {
+};
+
+for (let i of products.data) {
     //Create Card
     let card = document.createElement("div");
     //Card should have category and should stay hidden initially
@@ -1424,5 +1424,3 @@ let products = {
 	  });
 	});
   });
-  
-  

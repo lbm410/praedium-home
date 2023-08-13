@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    font-size: 19px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo i {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .menu li:hover {
+    background-color: #444;
+  }
+  
+  .menu li i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  .config-button {
+    margin-top: 245%;
+  }
+  

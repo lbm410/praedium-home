@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<style>
+  body {
+    font-family: monospace;
+  }
+  .container {
+    padding-top: 1em;
+    color: #110f29;
+  }
+  .loginformulario {
+    background-color: #ffffff;
+    max-width: 19em;
+    margin-top: 1em;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px black;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  input[type="text"], input[type="password"] {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  button {
+    border: 2px solid rgb(35, 36, 38);
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: rgb(35, 36, 38);
+    cursor: pointer;
+    margin-top: 0.5em;
+    font-size: 11px;
+    font-family: monospace;
+    margin: 0 auto;
+  }
+  h4 {
+    text-align: center;
+    font-weight: 600;
+  }
+  h1 {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="loginformulario">
+  <h1>Panel de Administrador</h1>
+  <h4>Praedium Home</h4>
+  <form id="login-form">
+    <label for="username">Usuario:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="button" id="login-button">Iniciar Sesión</button>
+  </form>
+</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const loginButton = document.getElementById("login-button");
+  
+  loginButton.addEventListener("click", function() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    
+    // Replace with your own authentication logic
+    if (username === "Admin" && password === "password" || username === "Praedium" && password === "praedium2023" || username === "Lucas" && password === "lucasypabloS123") {
+      // Set session storage to indicate user is logged in
+      sessionStorage.setItem("loggedIn", "true");
+
+      // Redirect to admin page on successful login
+      window.location.href = "admin_page.html";
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  });
+});
+</script>
+</body>
+</html>
