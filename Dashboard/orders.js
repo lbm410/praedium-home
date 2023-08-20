@@ -1,20 +1,20 @@
 const Orders = [
     {
-        productName: 'JavaScript Tutorial',
+        productName: 'Reforma Piso Emiliano 2B',
         productNumber: '85743',
-        paymentStatus: 'Due',
+        paymentStatus: 'Hecho',
         status: 'Pending'
     },
     {
-        productName: 'CSS Full Course',
+        productName: 'Placas Sobrantes Suelo Flotante',
         productNumber: '97245',
-        paymentStatus: 'Refunded',
+        paymentStatus: 'Reembolsado',
         status: 'Declined'
     },
     {
-        productName: 'Flex-Box Tutorial',
+        productName: 'Instalación Aires y Televisiones',
         productNumber: '36452',
-        paymentStatus: 'Paid',
+        paymentStatus: 'Hecho',
         status: 'Active'
     },
 ]
