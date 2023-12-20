@@ -1,8 +1,0 @@
-{
-  "useSmtp": true,
-  "host": "stmp.gmail.com",
-  "port": 587,
-  "username": "lucasbarrientosmunoz@gmail.com",
-  "password": "tecsy3-cofvyh-simneP",
-  "recipientEmail": "lucasbarrientosmunoz@gmail.com"
-}
