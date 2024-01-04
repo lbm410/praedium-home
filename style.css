@@ -164,10 +164,30 @@ span.button:hover {
 }
 
 
-
-
-/* Establecer el ancho y la altura del video */
 video {
+    cursor: pointer;
+    pointer-events: auto;
     width: 768px; /* Ajusta el ancho según sea necesario */
     height: 432px; /* Ajusta la altura según sea necesario */
+    outline: none; /* Eliminar el contorno al hacer clic en el video */
 }
+
+/* Estilo del botón de reproducción */
+video::-webkit-media-controls-play-button {
+    display: none; /* Ocultar el botón de reproducción en navegadores basados en WebKit, como Chrome y Safari */
+}
+
+video::-webkit-media-controls {
+    display: none !important; /* Ocultar todos los controles en navegadores basados en WebKit */
+}
+
+video::-webkit-media-controls-start-playback-button {
+    display: none; /* Ocultar el botón de inicio de reproducción en navegadores basados en WebKit */
+}
+
+/** Establecer el ancho y la altura del video
+video {
+    width: 768px;  Ajusta el ancho según sea necesario 
+    height: 432px;  Ajusta la altura según sea necesario 
+}
+**/

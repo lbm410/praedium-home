@@ -43,22 +43,21 @@
             </video>
         </div>
     </main>
-    
     <script>
-        // Obtener referencia al elemento de video
-        var myVideo = document.getElementById("myVideo");
+    // Obtener referencia al elemento de video
+    var myVideo = document.getElementById("myVideo");
 
-        // Función para pausar/reanudar al hacer clic en el video
-        function togglePlayPause() {
-            if (myVideo.paused) {
-                myVideo.play();
-            } else {
-                myVideo.pause();
-            }
+    // Función para pausar/reanudar al hacer clic en el video
+    function togglePlayPause() {
+        if (myVideo.paused) {
+            myVideo.play();
+        } else {
+            myVideo.pause();
         }
+    }
 
-        // Asignar la función al evento clic en el video
-        myVideo.addEventListener("click", togglePlayPause);
+    // Asignar la función al evento clic en el video
+    myVideo.addEventListener("click", togglePlayPause);
     </script>
 </body>
 </html>
