@@ -6,23 +6,39 @@
 }
 
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background-color: transparent;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: transform 0.3s ease-in-out; /* Transición suave */
 }
 
-.logo {
-    font-size: 28px;
+.logo img {
+    max-width: 150px; /* Tamaño máximo del logo */
+    height: auto; /* Ajuste proporcional del alto */
+    display: block; /* Asegura que se comporte como un bloque dentro del enlace */
+}
+
+/* Centrar el logo verticalmente dentro del header */
+.header .logo {
+    display: flex; /* Permite la alineación del contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.menu-toggle {
+    display: none; /* Por defecto, no se muestra */
+    font-size: 2rem;
     color: #4C5C68;
-    text-decoration: none;
-    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .navbar a {
@@ -49,8 +65,34 @@
     width: 100%;
 }
 
+/* Secciones con altura dinámica */
+section {
+    padding-top: 100px; /* Margen superior */
+    padding-bottom: 100px; /* Margen inferior */
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenido de las secciones */
+.primera-seccion {
+    text-align: center;
+    padding-top: 100px; /* Margen superior */
+    padding-bottom: 100px; /* Margen inferior */}
+
+.section-highlight {
+    background-color: #4C5C68;
+    height: auto;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 50px; /* Margen superior */
+    padding-bottom: 50px; /* Margen inferior */}
+
+.section-highlight p {
+    color: white;
+}
+
 .first {
-    margin-top: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +110,6 @@
     align-items: center;
     font-size: 16px;
     font-weight: 500;
-    text-decoration: wavy;
     color: #4C5C68;
 }
 
@@ -86,6 +127,7 @@
 .third p {
     font-family: 'Montserrat Thin', sans-serif;
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -102,92 +144,146 @@ span.button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: auto;
-    transition-duration: 0.4s;
     cursor: pointer;
     font-weight: 800;
+    transition-duration: 0.4s;
 }
 
 span.button:hover {
     background-color: #C5C3C6;
     border: 2px solid #C5C3C6;
     color: white;
-    transform: scale(1.1); /* Hace que el botón sea un 10% más grande al hacer hover */
+    transform: scale(1.1);
 }
 
-.segunda-seccion {
-    background-color: #4C5C68;
-    height: 600px;
-    width: 100%;
-    margin-top: 85px;
-    color: white;
-    text-align: center;
-    font-size: 22px;
+/* Beneficios en formato horizontal */
+.horizontal {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta los elementos si no caben en una línea */
+    justify-content: center; /* Centra el contenido */
+    gap: 20px; /* Espaciado entre beneficios */
+    padding: 40px;
+    margin: 20px auto; /* Centrado automático */
+    max-width: 1200px; /* Limita el ancho máximo */
 }
 
-/* Media query para ocultar el botón de desplegable en dispositivos que no son móviles */
-@media only screen and (min-width: 601px) {
-    .menu-toggle {
-        display: none;
-    }
-
-    .navbar {
-        display: flex;
-    }
+.benefit {
+    flex: 1 1 250px; /* Cada beneficio ocupa mínimo 250px y crece según el espacio */
+    max-width: 300px; /* Ancho máximo para cada beneficio */
+    text-align: center; /* Centra el contenido */
+    padding: 20px;
+    border: 1px solid #ddd; /* Añade un borde ligero */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Resto de tus estilos para dispositivos móviles */
-@media only screen and (max-width: 600px) {
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5em;
-    }
-
-    .navbar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        width: 100%;
-        background-color: #333;
-    }
-
-    .navbar.show {
-        display: flex;
-    }
-
-    ul {
-        flex-direction: column;
-        align-items: center;
-    }
+.benefit-icon {
+    font-size: 3rem;
+    color: #4C5C68;
+    margin-bottom: 10px;
 }
 
+.benefit-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4C5C68;
+}
 
+.benefit-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Videos */
 video {
     cursor: pointer;
     pointer-events: auto;
-    width: 768px; /* Ajusta el ancho según sea necesario */
-    height: 432px; /* Ajusta la altura según sea necesario */
-    outline: none; /* Eliminar el contorno al hacer clic en el video */
-}
-
-/* Estilo del botón de reproducción */
-video::-webkit-media-controls-play-button {
-    display: none; /* Ocultar el botón de reproducción en navegadores basados en WebKit, como Chrome y Safari */
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    max-width: 768px; /* Limita el ancho máximo */
+    height: auto; /* Ajusta la altura automáticamente */
+    outline: none;
 }
 
 video::-webkit-media-controls {
-    display: none !important; /* Ocultar todos los controles en navegadores basados en WebKit */
+    display: none !important;
 }
 
-video::-webkit-media-controls-start-playback-button {
-    display: none; /* Ocultar el botón de inicio de reproducción en navegadores basados en WebKit */
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .horizontal {
+        flex-direction: column; /* Acomoda en columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .benefit {
+        max-width: 100%; /* Usa todo el ancho disponible */
+    }
+
+    .header {
+        padding: 10px 20px; /* Reduce el padding en dispositivos pequeños */
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 20px;
+    }
 }
 
-/** Establecer el ancho y la altura del video
-video {
-    width: 768px;  Ajusta el ancho según sea necesario 
-    height: 432px;  Ajusta la altura según sea necesario 
+@media (max-width: 480px) {
+    .first {
+        font-size: 24px; /* Reduce el tamaño del texto principal */
+    }
+
+    .second {
+        font-size: 14px;
+    }
+
+    span.button {
+        padding: 8px 30px;
+        font-size: 14px;
+    }
 }
-**/
+
+/* Mostrar el botón de hamburguesa en dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Visible en pantallas pequeñas */
+    }
+
+    /* Navbar en dispositivos móviles */
+    .navbar {
+        display: none; /* Ocultar inicialmente */
+        flex-direction: column; /* Los enlaces se colocan en columna */
+        position: absolute;
+        top: 60px; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: white; /* Fondo blanco para el menú desplegable */
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+
+    .navbar.show {
+        display: flex; /* Mostrar el menú al activarse */
+    }
+
+    .navbar a {
+        margin: 10px 0; /* Espaciado entre enlaces */
+        text-align: center;
+    }
+}
+
+/* Navbar en pantallas grandes */
+@media (min-width: 769px) {
+    .navbar {
+        display: flex; /* Mostrar el navbar de manera horizontal */
+    }
+}

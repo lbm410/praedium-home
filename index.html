@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/88d4f9be42.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">Praedium Home</a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <a href="#" class="logo"><img src="/media/logo.png" alt="" srcset=""></a>
+        <!-- Botón de menú hamburguesa -->
+        <div class="menu-toggle">☰</div>
+        <!-- Contenedor del menú -->
         <nav class="navbar">
             <a href="#">Como funciona</a>
             <a href="#">Sobre nosotros</a>
@@ -32,32 +34,67 @@
                 <p>En <b>Praedium</b> nos hemos especializado en la gestión total de propiedades ofreciendo alquileres de larga duración y pagos<br> asegurados.</p>
             </div>
             <div class="container">
-                <span class="button">Me interesa</span>
+                <span class="button">Empieza Ahora</span>
             </div>
         </div>
-        <div class="segunda-seccion">
-            <p><br><br>Te mostramos cómo...<br><br><br></p>
+        <div class="section-highlight">
+            <p class="first">Te mostramos cómo... <br><br></p>
             <video id="myVideo" controls>
                 <source src="/media/test.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
+        <div class="primera-seccion">
+            <p class="first">¿Te identificas con alguna de estas frases?</p>
+            <p class="second">
+            - ¡Tengo miedo a que los inquilinos dejen de pagarme! <br>
+            - ¿Qué pasa si alguien okupa mi vivienda?<br>
+            - Ahora la nevera está rota, es el tercer arreglo este año.<br>
+            - Es verano y no tengo inquilinos, ¿Ahora qué hago?.
+            </p>
+            <div class="third">
+                <p>En <b>Praedium</b> nos hemos especializado en la gestión total de propiedades ofreciendo alquileres de larga duración y pagos<br> asegurados.</p>
+            </div>
+            <div class="container">
+                <span class="button">Me interesa</span>
+            </div>
+        </div>
+        <div class="section-highlight">
+            <p class="first">Beneficios de trabajar con nosotros</p>
+            <p class="second">¿Por qué elegir nuestra solución de Rent-to-Rent?</p>
+            <section id="benefits" class="horizontal">
+                <div class="benefit">
+                    <div class="benefit-icon">💡</div>
+                    <div class="benefit-title">Ingresos garantizados</div>
+                    <div class="benefit-text">Te ofrecemos un ingreso fijo mensual, sin importar la ocupación de tu propiedad.</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🛠️</div>
+                    <div class="benefit-title">Gestión integral</div>
+                    <div class="benefit-text">Nos encargamos de todo: búsqueda de inquilinos, mantenimiento y más.</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">⏰</div>
+                    <div class="benefit-title">Cero preocupaciones</div>
+                    <div class="benefit-text">Nosotros lidiamos con incidencias, trámites y problemas del día a día.</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🏡</div>
+                    <div class="benefit-title">Optimización de tus espacios</div>
+                    <div class="benefit-text">Aumentamos la rentabilidad adaptando y gestionando tu propiedad.</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-title">Contratos claros y seguros</div>
+                    <div class="benefit-text">Transparencia total en cada paso, con contratos que protegen tus intereses.</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🌍</div>
+                    <div class="benefit-title">Compromiso sostenible</div>
+                    <div class="benefit-text">Mantenimiento eficiente y sostenible para el beneficio del entorno.</div>
+                </div>
+            </section>          
+        </div>
     </main>
-    <script>
-    // Obtener referencia al elemento de video
-    var myVideo = document.getElementById("myVideo");
-
-    // Función para pausar/reanudar al hacer clic en el video
-    function togglePlayPause() {
-        if (myVideo.paused) {
-            myVideo.play();
-        } else {
-            myVideo.pause();
-        }
-    }
-
-    // Asignar la función al evento clic en el video
-    myVideo.addEventListener("click", togglePlayPause);
-    </script>
 </body>
 </html>
