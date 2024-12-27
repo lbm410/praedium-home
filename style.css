@@ -20,7 +20,7 @@
 }
 
 .logo img {
-    max-width: 150px; /* Tamaño máximo del logo */
+    max-width: 80px; /* Tamaño máximo del logo */
     height: auto; /* Ajuste proporcional del alto */
     display: block; /* Asegura que se comporte como un bloque dentro del enlace */
 }
