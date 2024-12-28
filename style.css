@@ -76,7 +76,10 @@ section {
 .primera-seccion {
     text-align: center;
     padding-top: 100px; /* Margen superior */
-    padding-bottom: 100px; /* Margen inferior */}
+    padding-bottom: 100px; /* Margen inferior */
+    position: relative;
+    overflow: hidden;
+}
 
 .section-highlight {
     background-color: #4C5C68;
@@ -197,6 +200,7 @@ span.button:hover {
     line-height: 1.5;
 }
 
+
 /* Videos */
 video {
     cursor: pointer;
@@ -210,6 +214,51 @@ video {
 video::-webkit-media-controls {
     display: none !important;
 }
+
+/* Preloader: Estilo de pantalla completa */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Fondo del preloader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+/* Logo del Preloader */
+.preloader-logo {
+    max-width: 150px; /* Ajusta el tamaño del logo */
+    animation: fade-in-out 1.5s infinite; /* Efecto de parpadeo */
+}
+
+/* Animación de parpadeo del logo */
+@keyframes fade-in-out {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Estado inicial: contenido oculto */
+.fade-in-content {
+    opacity: 0;
+    transform: translateY(50px); /* Mantén el contenido desplazado */
+    transition: opacity 1s ease, transform 1s ease; /* Transición suave */
+}
+
+/* Estado visible: contenido animado */
+.fade-in-content.visible {
+    opacity: 1;
+    transform: translateY(0); /* El contenido vuelve a su posición original */
+}
+
+
 
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -253,6 +302,11 @@ video::-webkit-media-controls {
 
 /* Mostrar el botón de hamburguesa en dispositivos móviles */
 @media (max-width: 768px) {
+    .logo img {
+        max-width: 50px; /* Tamaño máximo del logo */
+        height: auto; /* Ajuste proporcional del alto */
+        display: block; /* Asegura que se comporte como un bloque dentro del enlace */
+    }
     .menu-toggle {
         display: block; /* Visible en pantallas pequeñas */
     }
@@ -286,4 +340,130 @@ video::-webkit-media-controls {
     .navbar {
         display: flex; /* Mostrar el navbar de manera horizontal */
     }
+}
+
+/* Estilo general del formulario */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto; /* Centra el formulario */
+    padding: 30px;
+}
+
+/* Encabezado del formulario */
+.contact-form h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+        color: #4C5C68;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de los campos */
+.contact-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4C5C68;
+    margin-bottom: 8px;
+}
+
+/* Estilo de los campos de entrada */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #4C5C68;
+    transition: border-color 0.3s ease;
+}
+
+/* Campos de texto al enfocar */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4C5C68;
+    outline: none;
+}
+
+/* Estilo del botón de envío */
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4C5C68;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #C5C3C6;
+    transform: scale(1.05); /* Agranda el botón ligeramente */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Estilos para la pregunta inicial */
+.contact-options {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.contact-options h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #4C5C68;
+    margin-bottom: 20px;
+}
+
+.option-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.option-buttons .button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #4C5C68;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.option-buttons .button:hover {
+    background-color: #C5C3C6;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
 }

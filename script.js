@@ -50,3 +50,76 @@ window.addEventListener('scroll', () => {
         lastScrollY = window.scrollY;
     }
 });
+
+// Seleccionar todas las secciones que deseas animar
+const sections = document.querySelectorAll('.fade-in-content');
+
+// Crear el Intersection Observer
+function setupObserver() {
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Agregar la clase visible
+                    observer.unobserve(entry.target); // Detener la observación una vez que se anima
+                }
+            });
+        },
+        { threshold: 0.2 } // Activar cuando el 20% de la sección sea visible
+    );
+
+    // Observar cada sección
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Esperar a que la página esté completamente cargada
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const body = document.body;
+
+    // Mantener el preloader visible unos segundos más
+    setTimeout(() => {
+        preloader.style.opacity = '0'; // Animar la opacidad para el desvanecimiento
+        preloader.style.transition = 'opacity 1s ease'; // Transición suave
+
+        // Cuando el preloader desaparezca completamente
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            body.classList.remove('preload'); // Eliminar la clase de estado inicial
+            body.classList.add('loaded'); // Agregar la clase de contenido visible
+
+            // Iniciar el Observer después de que el preloader desaparezca
+            setupObserver();
+        }, 1000); // Tiempo para que se complete la animación de desvanecimiento
+    }, 500); // Tiempo extra en milisegundos para mostrar el preloader
+})
+;
+
+// Referencias a los elementos
+const onePropertyBtn = document.getElementById('one-property');
+const multiplePropertiesBtn = document.getElementById('multiple-properties');
+const formContainer = document.getElementById('form-container');
+const formOneProperty = document.getElementById('form-one-property');
+const formMultipleProperties = document.getElementById('form-multiple-properties');
+
+// Verifica si los elementos existen antes de usar eventos
+if (onePropertyBtn && multiplePropertiesBtn && formContainer && formOneProperty && formMultipleProperties) {
+    // Manejador para mostrar el formulario de 1 vivienda
+    onePropertyBtn.addEventListener('click', () => {
+        formContainer.classList.remove('hidden');
+        formOneProperty.classList.remove('hidden');
+        formMultipleProperties.classList.add('hidden');
+    });
+
+    // Manejador para mostrar el formulario de 2 o más viviendas
+    multiplePropertiesBtn.addEventListener('click', () => {
+        formContainer.classList.remove('hidden');
+        formMultipleProperties.classList.remove('hidden');
+        formOneProperty.classList.add('hidden');
+    });
+} else {
+    console.error('Uno o más elementos no se encontraron en el DOM.');
+}
+

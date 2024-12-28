@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/media/logo.ico">
+    <title>Praedium Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="/index.html" class="logo"><img src="/media/logo.png" alt="" srcset=""></a>
+        <div class="menu-toggle">☰</div>
+        <nav class="navbar">
+            <a href="#">Como funciona</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Propiedades</a>
+            <a href="/contact.html">Contacto</a>
+            <a href="https://www.instagram.com/praediumhome" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-options" id="contact-options">
+            <h2>¿Cuántas viviendas quiere que le gestionemos?</h2>
+            <div class="option-buttons">
+                <button id="one-property" class="button">1 vivienda</button>
+                <button id="multiple-properties" class="button">2 o más viviendas</button>
+            </div>
+        </section>
+        <section class="contact-form hidden" id="form-container">
+            <div id="form-one-property" class="hidden">
+                <h2>Formulario para 1 vivienda</h2>
+                <form action="/submit_form" method="post">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="square_meters">Metros Cuadrados de la Vivienda:</label>
+                        <input type="number" id="square_meters" name="square_meters" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedrooms">Número de Dormitorios:</label>
+                        <input type="number" id="bedrooms" name="bedrooms" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms">Número de Baños:</label>
+                        <input type="number" id="bathrooms" name="bathrooms" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div id="form-multiple-properties" class="hidden">
+                <h2>Formulario para 2 o más viviendas</h2>
+                <form action="/submit_form" method="post">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="properties">Número de Viviendas:</label>
+                        <input type="number" id="properties" name="properties" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="contact.js"></script>
+</body>
+
+</html>

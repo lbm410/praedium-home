@@ -12,7 +12,14 @@
     <script src="https://kit.fontawesome.com/88d4f9be42.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="preload">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="logo-container">
+            <img src="/media/logo.png" alt="Logo de Praedium Home" class="preloader-logo">
+        </div>
+    </div>
+    <!-- Header -->
     <header class="header">
         <a href="#" class="logo"><img src="/media/logo.png" alt="" srcset=""></a>
         <!-- Botón de menú hamburguesa -->
@@ -22,79 +29,87 @@
             <a href="#">Como funciona</a>
             <a href="#">Sobre nosotros</a>
             <a href="#">Propiedades</a>
-            <a href="#">Contacto</a>
+            <a href="/contact.html">Contacto</a>
             <a href="https://www.instagram.com/praediumhome" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </nav>
     </header>
     <main>
         <div class="primera-seccion">
-            <p class="first">Alquilamos tu vivienda garantizando <br> las rentas mes a mes</p>
-            <p class="second">-Somos el inquilino ideal-</p>
-            <div class="third">
-                <p>En <b>Praedium</b> nos hemos especializado en la gestión total de propiedades ofreciendo alquileres de larga duración y pagos<br> asegurados.</p>
+            <div class="fade-in-content">
+                <p class="first">Convierte tu vivienda en una fuente de ingresos seguros</p>
+                <p class="second">¡Déjanos gestionarlo todo por ti!</p>
+                <div class="third">
+                    <p>En <b>Praedium Home</b>, transformamos la experiencia de alquilar tu propiedad. Con pagos puntuales y gestión total, tu tranquilidad es nuestra prioridad.</p>
+                </div>
+                <div class="container">
+                    <span class="button">Descubre Más</span>
+                </div>
             </div>
-            <div class="container">
-                <span class="button">Empieza Ahora</span>
-            </div>
-        </div>
+        </div>        
         <div class="section-highlight">
-            <p class="first">Te mostramos cómo... <br><br></p>
-            <video id="myVideo" controls>
-                <source src="/media/test.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
+            <div class="fade-in-content">
+                <p class="first">Te mostramos cómo... <br><br></p>
+                <video id="myVideo" controls>
+                    <source src="/media/test.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
         </div>
         <div class="primera-seccion">
-            <p class="first">¿Te identificas con alguna de estas frases?</p>
-            <p class="second">
-            - ¡Tengo miedo a que los inquilinos dejen de pagarme! <br>
-            - ¿Qué pasa si alguien okupa mi vivienda?<br>
-            - Ahora la nevera está rota, es el tercer arreglo este año.<br>
-            - Es verano y no tengo inquilinos, ¿Ahora qué hago?.
-            </p>
-            <div class="third">
-                <p>En <b>Praedium</b> nos hemos especializado en la gestión total de propiedades ofreciendo alquileres de larga duración y pagos<br> asegurados.</p>
+            <div class="fade-in-content">
+                <p class="first">¿Te suenan estas preocupaciones?</p>
+                <p class="second">
+                - "¿Qué pasa si no recibo el pago del alquiler este mes?"<br>
+                - "Mi vivienda necesita reparaciones constantes, pero no tengo tiempo."<br>
+                - "Temo que inquilinos no deseados causen problemas."<br>
+                - "Quiero que mi propiedad sea rentable, pero sin complicaciones."
+                </p>
+                <div class="third">
+                    <p>Con <b>Praedium Home</b>, puedes olvidarte de estas preocupaciones. Nosotros nos encargamos de todo para que tú solo disfrutes de los beneficios.</p>
+                </div>
+                <div class="container">
+                    <span class="button">Contáctanos Ahora</span>
+                </div>
             </div>
-            <div class="container">
-                <span class="button">Me interesa</span>
-            </div>
-        </div>
+        </div>        
         <div class="section-highlight">
-            <p class="first">Beneficios de trabajar con nosotros</p>
-            <p class="second">¿Por qué elegir nuestra solución de Rent-to-Rent?</p>
-            <section id="benefits" class="horizontal">
-                <div class="benefit">
-                    <div class="benefit-icon">💡</div>
-                    <div class="benefit-title">Ingresos garantizados</div>
-                    <div class="benefit-text">Te ofrecemos un ingreso fijo mensual, sin importar la ocupación de tu propiedad.</div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">🛠️</div>
-                    <div class="benefit-title">Gestión integral</div>
-                    <div class="benefit-text">Nos encargamos de todo: búsqueda de inquilinos, mantenimiento y más.</div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">⏰</div>
-                    <div class="benefit-title">Cero preocupaciones</div>
-                    <div class="benefit-text">Nosotros lidiamos con incidencias, trámites y problemas del día a día.</div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">🏡</div>
-                    <div class="benefit-title">Optimización de tus espacios</div>
-                    <div class="benefit-text">Aumentamos la rentabilidad adaptando y gestionando tu propiedad.</div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">🤝</div>
-                    <div class="benefit-title">Contratos claros y seguros</div>
-                    <div class="benefit-text">Transparencia total en cada paso, con contratos que protegen tus intereses.</div>
-                </div>
-                <div class="benefit">
-                    <div class="benefit-icon">🌍</div>
-                    <div class="benefit-title">Compromiso sostenible</div>
-                    <div class="benefit-text">Mantenimiento eficiente y sostenible para el beneficio del entorno.</div>
-                </div>
-            </section>          
+            <div class="fade-in-content">
+                <p class="first">Beneficios de trabajar con nosotros</p>
+                <p class="second">¿Por qué elegir nuestra solución de Rent-to-Rent?</p>
+                <section id="benefits" class="horizontal">
+                    <div class="benefit">
+                        <div class="benefit-icon">💡</div>
+                        <div class="benefit-title">Ingresos garantizados</div>
+                        <div class="benefit-text">Te ofrecemos un ingreso fijo mensual, sin importar la ocupación de tu propiedad.</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🛠️</div>
+                        <div class="benefit-title">Gestión integral</div>
+                        <div class="benefit-text">Nos encargamos de todo: búsqueda de inquilinos, mantenimiento y más.</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">⏰</div>
+                        <div class="benefit-title">Cero preocupaciones</div>
+                        <div class="benefit-text">Nosotros lidiamos con incidencias, trámites y problemas del día a día.</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🏡</div>
+                        <div class="benefit-title">Optimización de tus espacios</div>
+                        <div class="benefit-text">Aumentamos la rentabilidad adaptando y gestionando tu propiedad.</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🤝</div>
+                        <div class="benefit-title">Contratos claros y seguros</div>
+                        <div class="benefit-text">Transparencia total en cada paso, con contratos que protegen tus intereses.</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🌍</div>
+                        <div class="benefit-title">Compromiso sostenible</div>
+                        <div class="benefit-text">Mantenimiento eficiente y sostenible para el beneficio del entorno.</div>
+                    </div>
+                </section>
+            </div>    
         </div>
     </main>
 </body>
