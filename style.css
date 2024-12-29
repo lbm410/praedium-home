@@ -565,3 +565,276 @@ video::-webkit-media-controls {
         text-align: center; /* Centra el texto */
     }
 }
+
+/* Footer */
+.footer {
+    background-color: #4C5C68;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px; 
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Logo del footer */
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 120px;
+    max-width: 100%;
+}
+
+/* Enlaces y redes sociales */
+.footer-content {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    text-align: right;
+}
+
+/* Enlaces útiles */
+.footer-links h4,
+.footer-social h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px;
+}
+
+.footer-links li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #C5C3C6;
+}
+
+/* Redes sociales */
+.footer-social .social-icons a {
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    color: #C5C3C6;
+}
+
+/* Derechos reservados */
+.footer-legal {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-legal a {
+    color: #C5C3C6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: white;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+/* Botón flotante de cookies */
+.cookie-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4C5C68;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cookie-button:hover {
+    background-color: #C5C3C6;
+    transform: scale(1.05);
+}
+
+/* Modal de Cookies */
+.cookie-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.cookie-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie-modal-content h2 {
+    font-size: 18px;
+    color: #4C5C68;
+    margin-bottom: 10px;
+}
+
+.cookie-modal-content p {
+    font-size: 14px;
+    color: #4C5C68;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.cookie-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cookie-options label {
+    font-size: 14px;
+    color: #4C5C68;
+    display: flex;
+    align-items: center;
+}
+
+.cookie-options input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.cookie-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cookie-actions .button {
+    background-color: #4C5C68;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cookie-actions .button:hover {
+    background-color: #C5C3C6;
+    transform: scale(1.05);
+}
+
+.cookie-actions .button.secondary {
+    background-color: white;
+    color: #4C5C68;
+    border: 1px solid #4C5C68;
+}
+
+.cookie-actions .button.secondary:hover {
+    background-color: #4C5C68;
+    color: white;
+}
+
+/* Fondo con blur */
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.blur-background.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .cookie-modal {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .cookie-modal-content h2 {
+        font-size: 16px;
+    }
+
+    .cookie-modal-content p {
+        font-size: 13px;
+    }
+
+    .cookie-actions .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+}

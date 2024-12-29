@@ -1,6 +1,13 @@
 // Obtener referencias a elementos DOM
 const menuToggle = document.querySelector('.menu-toggle');
 const navbar = document.querySelector('.navbar');
+const modal = document.getElementById('cookie-modal');
+const blurBackground = document.getElementById('blur-background');
+const cookieButton = document.getElementById('cookie-button');
+const acceptButton = document.getElementById('accept-cookies');
+const saveButton = document.getElementById('save-cookies');
+const analyticsCheckbox = document.getElementById('analytics-cookies');
+const personalizationCheckbox = document.getElementById('personalization-cookies');
 
 // Función para alternar la visibilidad del menú
 function toggleMenu() {
@@ -10,26 +17,26 @@ function toggleMenu() {
 // Event listener para el botón de hamburguesa
 menuToggle.addEventListener('click', toggleMenu);
 
-    // Obtener referencia al elemento de video
-    var myVideo = document.getElementById("myVideo");
+// Obtener referencia al elemento de video
+var myVideo = document.getElementById("myVideo");
 
-    // Función para pausar/reanudar al hacer clic en el video
-    function togglePlayPause() {
-        if (myVideo.paused) {
-            myVideo.play();
-        } else {
-            myVideo.pause();
-        }
+// Función para pausar/reanudar al hacer clic en el video
+function togglePlayPause() {
+    if (myVideo.paused) {
+        myVideo.play();
+    } else {
+        myVideo.pause();
     }
+}
 
-    // Asignar la función al evento clic en el video
-    myVideo.addEventListener("click", togglePlayPause);
+// Asignar la función al evento clic en el video
+myVideo.addEventListener("click", togglePlayPause);
 
-    let lastScrollY = window.scrollY;
+let lastScrollY = window.scrollY;
 const header = document.querySelector('.header');
 
 // Altura desde la cual empieza a funcionar el comportamiento
-const activationHeight = 50; 
+const activationHeight = 50;
 
 // Escucha el evento de desplazamiento
 window.addEventListener('scroll', () => {
@@ -94,7 +101,39 @@ window.addEventListener('load', () => {
             setupObserver();
         }, 1000); // Tiempo para que se complete la animación de desvanecimiento
     }, 500); // Tiempo extra en milisegundos para mostrar el preloader
-})
-;
 
+    // Modal de cookies
+    cookieButton.addEventListener('click', () => {
+        modal.classList.toggle('show');
+        blurBackground.classList.toggle('show');
+    });
 
+    // Aceptar todas las cookies
+    acceptButton.addEventListener('click', () => {
+        savePreferences({ essential: true, analytics: true, personalization: true });
+        closeModal();
+    });
+
+    // Guardar preferencias seleccionadas
+    saveButton.addEventListener('click', () => {
+        const preferences = {
+            essential: true,
+            analytics: analyticsCheckbox.checked,
+            personalization: personalizationCheckbox.checked,
+        };
+        savePreferences(preferences);
+        closeModal();
+    });
+
+    // Guardar las preferencias en el almacenamiento local
+    function savePreferences(preferences) {
+        localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+        console.log('Preferencias de cookies guardadas:', preferences);
+    }
+
+    // Cerrar el modal de cookies
+    function closeModal() {
+        modal.classList.remove('show');
+        blurBackground.classList.remove('show');
+    }
+});
