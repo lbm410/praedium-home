@@ -97,29 +97,4 @@ window.addEventListener('load', () => {
 })
 ;
 
-// Referencias a los elementos
-const onePropertyBtn = document.getElementById('one-property');
-const multiplePropertiesBtn = document.getElementById('multiple-properties');
-const formContainer = document.getElementById('form-container');
-const formOneProperty = document.getElementById('form-one-property');
-const formMultipleProperties = document.getElementById('form-multiple-properties');
-
-// Verifica si los elementos existen antes de usar eventos
-if (onePropertyBtn && multiplePropertiesBtn && formContainer && formOneProperty && formMultipleProperties) {
-    // Manejador para mostrar el formulario de 1 vivienda
-    onePropertyBtn.addEventListener('click', () => {
-        formContainer.classList.remove('hidden');
-        formOneProperty.classList.remove('hidden');
-        formMultipleProperties.classList.add('hidden');
-    });
-
-    // Manejador para mostrar el formulario de 2 o más viviendas
-    multiplePropertiesBtn.addEventListener('click', () => {
-        formContainer.classList.remove('hidden');
-        formMultipleProperties.classList.remove('hidden');
-        formOneProperty.classList.add('hidden');
-    });
-} else {
-    console.error('Uno o más elementos no se encontraron en el DOM.');
-}
 
